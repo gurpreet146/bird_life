@@ -1,0 +1,2195 @@
+/* =========================================================
+   BIRD LIFE WEBSITE
+   RESPONSIVE CSS
+   Desktop → Tablet → Mobile → Small Mobile
+========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --primary-color: #1687d9;
+    --primary-dark: #0868ad;
+
+    --green-color: #218c67;
+    --green-light: #eaf7ef;
+
+    --yellow-color: #ffc928;
+
+    --dark-color: #102433;
+    --dark-light: #193447;
+
+    --text-color: #183247;
+    --text-light: #647585;
+
+    --white: #ffffff;
+    --light-bg: #f4f9fc;
+
+    --border-color: #dce8ef;
+
+    --shadow:
+        0 10px 30px rgba(16, 36, 51, 0.10);
+
+    --shadow-hover:
+        0 18px 40px rgba(16, 36, 51, 0.18);
+
+    --radius: 14px;
+
+    --transition:
+        all 0.3s ease;
+
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text-color);
+
+    background: var(--white);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+}
+
+
+body::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+
+body::-webkit-scrollbar-thumb {
+
+    background: var(--primary-color);
+
+    border-radius: 20px;
+
+}
+
+
+body::-webkit-scrollbar-track {
+
+    background: #edf3f6;
+
+}
+
+
+img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+ul {
+
+    list-style: none;
+
+}
+
+
+button,
+input,
+textarea {
+
+    font-family: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   3. COMMON CONTAINER
+========================================================= */
+
+.navbar,
+.intro-container,
+.section-container,
+.contact-container,
+.footer-container {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+/* =========================================================
+   4. NAVBAR
+========================================================= */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 72px;
+
+    background:
+        rgba(16, 36, 51, 0.96);
+
+    backdrop-filter:
+        blur(10px);
+
+    z-index: 1000;
+
+    box-shadow:
+        0 2px 15px
+        rgba(0, 0, 0, 0.12);
+
+}
+
+
+.navbar {
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* LOGO */
+
+.logo a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--white);
+
+    font-size: 1.55rem;
+
+    font-weight: 700;
+
+}
+
+
+.logo span:last-child {
+
+    color: #3aa8ef;
+
+}
+
+
+.logo-icon {
+
+    font-size: 1.7rem;
+
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+}
+
+
+.nav-links li a {
+
+    position: relative;
+
+    color: #ffffff;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    padding: 8px 0;
+
+    transition: var(--transition);
+
+}
+
+
+.nav-links li a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #36a9ef;
+
+    transition: var(--transition);
+
+}
+
+
+.nav-links li a:hover {
+
+    color: #45aff0;
+
+}
+
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+
+    width: 100%;
+
+}
+
+
+.nav-links li a.active {
+
+    color: #45aff0;
+
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 1.7rem;
+
+}
+
+
+/* =========================================================
+   5. HERO SECTION
+========================================================= */
+
+.hero-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-top: 72px;
+
+    background-image:
+
+        url("bird_images/kingfisher.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+/* DARK OVERLAY */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(8, 25, 36, 0.82),
+            rgba(8, 25, 36, 0.42),
+            rgba(8, 25, 36, 0.15)
+        );
+
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    color: white;
+
+}
+
+
+.hero-label {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 7px 14px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.45);
+
+    border-radius: 30px;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+
+}
+
+
+.hero-content h1 {
+
+    max-width: 700px;
+
+    font-size:
+        clamp(3.5rem, 7vw, 6rem);
+
+    line-height: 1.02;
+
+    margin-bottom: 25px;
+
+    font-weight: 800;
+
+}
+
+
+.hero-content h1 span {
+
+    display: block;
+
+    color: #36a8ed;
+
+}
+
+
+.hero-content p {
+
+    max-width: 650px;
+
+    color: #e5edf2;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 150px;
+
+    padding: 13px 22px;
+
+    border-radius: 5px;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+
+}
+
+
+.primary-btn {
+
+    background: var(--primary-color);
+
+    color: white;
+
+}
+
+
+.primary-btn:hover {
+
+    background: var(--primary-dark);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(22, 135, 217, 0.3);
+
+}
+
+
+.secondary-btn {
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.7);
+
+}
+
+
+.secondary-btn:hover {
+
+    background: white;
+
+    color: var(--dark-color);
+
+}
+
+
+/* =========================================================
+   6. INTRODUCTION
+========================================================= */
+
+.intro-section {
+
+    padding: 90px 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff,
+            #f3f9fc
+        );
+
+}
+
+
+.intro-container {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+.section-label {
+
+    color: var(--primary-color);
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.intro-heading h2 {
+
+    margin-top: 12px;
+
+    font-size:
+        clamp(2.2rem, 4vw, 3.5rem);
+
+    line-height: 1.15;
+
+}
+
+
+.intro-heading h2 span {
+
+    display: block;
+
+    color: var(--primary-color);
+
+}
+
+
+.intro-text p {
+
+    color: var(--text-light);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   7. BIRD SECTION
+========================================================= */
+
+.birds-section {
+
+    padding: 100px 0;
+
+    background: var(--light-bg);
+
+}
+
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin:
+        0 auto 55px;
+
+    text-align: center;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 10px;
+
+    font-size:
+        clamp(2.2rem, 4vw, 3.5rem);
+
+    line-height: 1.15;
+
+}
+
+
+.section-heading p {
+
+    margin-top: 12px;
+
+    color: var(--text-light);
+
+}
+
+
+/* CATEGORY */
+
+.bird-category {
+
+    margin-bottom: 60px;
+
+}
+
+
+.category-title {
+
+    margin-bottom: 20px;
+
+    padding-left: 12px;
+
+    border-left:
+        4px solid
+        var(--primary-color);
+
+    color: var(--dark-color);
+
+    font-size: 1.45rem;
+
+}
+
+
+/* BIRD GRID */
+
+.bird-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* =========================================================
+   8. BIRD CARD
+========================================================= */
+
+.bird-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+
+}
+
+
+.bird-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow: var(--shadow-hover);
+
+}
+
+
+/* IMAGE */
+
+.bird-image {
+
+    height: 220px;
+
+    overflow: hidden;
+
+}
+
+
+.bird-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+
+.bird-card:hover
+.bird-image img {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* CONTENT */
+
+.bird-content {
+
+    padding: 20px;
+
+}
+
+
+.bird-content h3 {
+
+    margin-bottom: 10px;
+
+    color: var(--dark-color);
+
+    font-size: 1.15rem;
+
+}
+
+
+.bird-content p {
+
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   9. LIFE SECTION
+========================================================= */
+
+.life-section {
+
+    padding: 100px 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #eef9f1,
+            #f8fcf9
+        );
+
+}
+
+
+.life-container {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+
+    align-items: start;
+
+}
+
+
+/* =========================================================
+   10. LIFE IMAGES
+========================================================= */
+
+.life-images {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+}
+
+
+.life-image {
+
+    position: relative;
+
+    height: 150px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+}
+
+
+.life-image.large {
+
+    grid-column:
+        span 3;
+
+    height: 180px;
+
+}
+
+
+.life-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.life-image:hover img {
+
+    transform:
+        scale(1.07);
+
+}
+
+
+/* IMAGE TITLE */
+
+.image-title {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 8px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.8)
+        );
+
+    color: white;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   11. LIFE TIMELINE
+========================================================= */
+
+.life-stages {
+
+    position: relative;
+
+}
+
+
+.life-stages::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 17px;
+
+    top: 15px;
+
+    bottom: 15px;
+
+    width: 2px;
+
+    background:
+        #8bc8a8;
+
+}
+
+
+.stage {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        35px 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 24px;
+
+}
+
+
+.stage-number {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 35px;
+
+    height: 35px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--green-color);
+
+    color: white;
+
+    font-weight: 700;
+
+    font-size: 0.85rem;
+
+    border:
+        3px solid
+        #eef9f1;
+
+}
+
+
+.stage-content h3 {
+
+    margin-bottom: 4px;
+
+    color: var(--dark-color);
+
+    font-size: 1.05rem;
+
+}
+
+
+.stage-content p {
+
+    color: var(--text-light);
+
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   12. CONTACT
+========================================================= */
+
+.contact-section {
+
+    padding: 100px 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #172f42,
+            #274f62
+        );
+
+}
+
+
+.contact-container {
+
+    max-width: 850px;
+
+}
+
+
+.contact-heading {
+
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+.contact-heading .section-label {
+
+    color: var(--yellow-color);
+
+}
+
+
+.contact-heading h2 {
+
+    margin-top: 10px;
+
+    font-size:
+        clamp(2.2rem, 5vw, 3.5rem);
+
+}
+
+
+.contact-heading p {
+
+    max-width: 550px;
+
+    margin: 10px auto 0;
+
+    color: #d5e2e9;
+
+}
+
+
+/* FORM */
+
+.contact-form {
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.2);
+
+}
+
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--dark-color);
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+}
+
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border:
+        1px solid
+        #cddbe3;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: white;
+
+    color: var(--text-color);
+
+    transition: var(--transition);
+
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 130px;
+
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border-color:
+        var(--primary-color);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 135, 217, 0.12);
+
+}
+
+
+/* SUBMIT */
+
+.submit-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background:
+        var(--yellow-color);
+
+    color: #172a38;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    transition: var(--transition);
+
+}
+
+
+.submit-btn:hover {
+
+    background: #f3b800;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   13. FOOTER
+========================================================= */
+
+.footer {
+
+    background:
+        #0d1e2b;
+
+    color: white;
+
+}
+
+
+.footer-container {
+
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.footer-logo h2 {
+
+    font-size: 1.4rem;
+
+}
+
+
+.footer-logo p {
+
+    margin-top: 5px;
+
+    color: #9eabb4;
+
+    font-size: 0.9rem;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.footer-links a {
+
+    color: #d6e0e5;
+
+    font-size: 0.9rem;
+
+    transition: var(--transition);
+
+}
+
+
+.footer-links a:hover {
+
+    color: #39a8ed;
+
+}
+
+
+.copyright {
+
+    padding: 18px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    text-align: center;
+
+}
+
+
+.copyright p {
+
+    color: #8f9da6;
+
+    font-size: 0.8rem;
+
+}
+
+
+/* =========================================================
+   14. BACK TO TOP
+========================================================= */
+
+.back-to-top {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        var(--primary-color);
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(15px);
+
+    transition: var(--transition);
+
+    z-index: 900;
+
+}
+
+
+.back-to-top.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.back-to-top:hover {
+
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =========================================================
+   15. LARGE TABLET
+   1024px and below
+========================================================= */
+
+@media (max-width: 1024px) {
+
+
+    /* NAVBAR */
+
+    .nav-links {
+
+        gap: 25px;
+
+    }
+
+
+    /* HERO */
+
+    .hero-content h1 {
+
+        font-size: 4.5rem;
+
+    }
+
+
+    /* INTRO */
+
+    .intro-container {
+
+        gap: 45px;
+
+    }
+
+
+    /* BIRDS */
+
+    .bird-grid {
+
+        gap: 15px;
+
+    }
+
+
+    .bird-image {
+
+        height: 190px;
+
+    }
+
+
+    /* LIFE */
+
+    .life-container {
+
+        gap: 30px;
+
+    }
+
+
+    .life-image {
+
+        height: 130px;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   16. TABLET
+   768px and below
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+
+    .header {
+
+        height: 65px;
+
+    }
+
+
+    .navbar {
+
+        height: 65px;
+
+    }
+
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        background:
+            rgba(16, 36, 51, 0.98);
+
+        transform:
+            translateY(-120%);
+
+        transition:
+            transform 0.35s ease;
+
+        box-shadow:
+            0 10px 20px
+            rgba(0,0,0,0.15);
+
+    }
+
+
+    .nav-links.show {
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    /* =============================================
+       HERO
+    ============================================= */
+
+    .hero-section {
+
+        min-height: 90vh;
+
+    }
+
+
+    .hero-content {
+
+        text-align: center;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(3rem, 9vw, 4rem);
+
+    }
+
+
+    .hero-content p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        font-size: 1rem;
+
+    }
+
+
+    .hero-buttons {
+
+        justify-content: center;
+
+    }
+
+
+    /* =============================================
+       INTRO
+    ============================================= */
+
+    .intro-section {
+
+        padding: 70px 0;
+
+    }
+
+
+    .intro-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        text-align: center;
+
+    }
+
+
+    /* =============================================
+       BIRDS
+    ============================================= */
+
+    .birds-section {
+
+        padding: 70px 0;
+
+    }
+
+
+    .bird-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .bird-image {
+
+        height: 210px;
+
+    }
+
+
+    /* =============================================
+       LIFE
+    ============================================= */
+
+    .life-section {
+
+        padding: 70px 0;
+
+    }
+
+
+    .life-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .life-images {
+
+        max-width: 700px;
+
+        margin: auto;
+
+    }
+
+
+    .life-stages {
+
+        max-width: 700px;
+
+        margin: auto;
+
+    }
+
+
+    /* =============================================
+       CONTACT
+    ============================================= */
+
+    .contact-section {
+
+        padding: 70px 0;
+
+    }
+
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+
+    .footer-container {
+
+        padding: 35px 0;
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   17. MOBILE
+   600px and below
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    /* =============================================
+       COMMON
+    ============================================= */
+
+    .navbar,
+    .intro-container,
+    .section-container,
+    .contact-container,
+    .footer-container {
+
+        width: 92%;
+
+    }
+
+
+    /* =============================================
+       LOGO
+    ============================================= */
+
+    .logo a {
+
+        font-size: 1.3rem;
+
+    }
+
+
+    .logo-icon {
+
+        font-size: 1.45rem;
+
+    }
+
+
+    /* =============================================
+       HERO
+    ============================================= */
+
+    .hero-section {
+
+        min-height: 850px;
+
+        background-position:
+            65% center;
+
+    }
+
+
+    .hero-overlay {
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(8, 25, 36, 0.72),
+                rgba(8, 25, 36, 0.75)
+            );
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 3rem;
+
+    }
+
+
+    .hero-content p {
+
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .btn {
+
+        width: 220px;
+
+    }
+
+
+    /* =============================================
+       SECTION HEADING
+    ============================================= */
+
+    .section-heading {
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 2.2rem;
+
+    }
+
+
+    /* =============================================
+       BIRDS
+    ============================================= */
+
+    .bird-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .bird-card {
+
+        max-width: 450px;
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+
+    .bird-image {
+
+        height: 230px;
+
+    }
+
+
+    .category-title {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    /* =============================================
+       LIFE IMAGES
+    ============================================= */
+
+    .life-images {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .life-image {
+
+        height: 140px;
+
+    }
+
+
+    .life-image.large {
+
+        grid-column:
+            span 2;
+
+        height: 170px;
+
+    }
+
+
+    /* =============================================
+       TIMELINE
+    ============================================= */
+
+    .stage {
+
+        grid-template-columns:
+            32px 1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .stage-number {
+
+        width: 32px;
+
+        height: 32px;
+
+        font-size: 0.75rem;
+
+    }
+
+
+    .life-stages::before {
+
+        left: 15px;
+
+    }
+
+
+    .stage-content h3 {
+
+        font-size: 1rem;
+
+    }
+
+
+    .stage-content p {
+
+        font-size: 0.82rem;
+
+    }
+
+
+    /* =============================================
+       CONTACT
+    ============================================= */
+
+    .contact-form {
+
+        padding: 25px 20px;
+
+    }
+
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+
+    .footer-links {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+    }
+
+
+    /* =============================================
+       BACK TO TOP
+    ============================================= */
+
+    .back-to-top {
+
+        right: 15px;
+
+        bottom: 15px;
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   18. SMALL MOBILE
+   400px and below
+========================================================= */
+
+@media (max-width: 400px) {
+
+
+    /* NAVBAR */
+
+    .logo a {
+
+        font-size: 1.15rem;
+
+    }
+
+
+    .logo-icon {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    /* HERO */
+
+    .hero-section {
+
+        min-height: 780px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 2.45rem;
+
+    }
+
+
+    .hero-label {
+
+        font-size: 0.65rem;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .hero-content p {
+
+        font-size: 0.85rem;
+
+    }
+
+
+    .btn {
+
+        width: 100%;
+
+        min-width: auto;
+
+    }
+
+
+    /* INTRO */
+
+    .intro-section {
+
+        padding: 55px 0;
+
+    }
+
+
+    .intro-heading h2 {
+
+        font-size: 2rem;
+
+    }
+
+
+    /* BIRDS */
+
+    .birds-section {
+
+        padding: 55px 0;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 1.9rem;
+
+    }
+
+
+    .bird-content {
+
+        padding: 16px;
+
+    }
+
+
+    .bird-image {
+
+        height: 200px;
+
+    }
+
+
+    /* LIFE */
+
+    .life-section {
+
+        padding: 55px 0;
+
+    }
+
+
+    .life-images {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .life-image {
+
+        height: 190px;
+
+    }
+
+
+    .life-image.large {
+
+        grid-column:
+            span 1;
+
+        height: 210px;
+
+    }
+
+
+    .stage-content p {
+
+        font-size: 0.78rem;
+
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+
+        padding: 55px 0;
+
+    }
+
+
+    .contact-heading h2 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .contact-form {
+
+        padding: 20px 15px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+
+        width: 90%;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   19. VERY SMALL DEVICES
+   350px and below
+========================================================= */
+
+@media (max-width: 350px) {
+
+
+    .hero-content h1 {
+
+        font-size: 2.15rem;
+
+    }
+
+
+    .hero-content p {
+
+        font-size: 0.8rem;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 1.7rem;
+
+    }
+
+
+    .bird-image {
+
+        height: 180px;
+
+    }
+
+
+    .life-image {
+
+        height: 160px;
+
+    }
+
+
+    .life-image.large {
+
+        height: 180px;
+
+    }
+
+
+    .form-group input,
+    .form-group textarea {
+
+        font-size: 0.85rem;
+
+        padding: 11px;
+
+    }
+
+}
